@@ -55,3 +55,22 @@ def run_pipeline():
     print("Hash:", h)
     print("Signature:", signature)
     print("Valid:", valid)
+
+    return machine
+
+def audit(machine):
+    print("\nLocal Storage:")
+    for k, v in machine.storage.items():
+        print(k, v)
+
+def summary():
+    print("\nSystem ready for end users")
+
+def main():
+    machine = run_pipeline()
+    audit(machine)
+    summary()
+    print("Done")
+
+if __name__ == "__main__":
+    main()
